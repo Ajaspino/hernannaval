@@ -1,0 +1,67 @@
+@font-face{font-family:"LopezLab Hand";src:url("fonts/LopezLabHand-Regular.woff2?v=2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"LopezLab Hand";src:url("fonts/LopezLabHand-SemiBold.woff2?v=2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"LopezLab Hand";src:url("fonts/LopezLabHand-Bold.woff2?v=2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Swift Neue";src:url("fonts/SwiftNeue-Book.woff") format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"Swift Neue";src:url("fonts/SwiftNeue-Italic.woff") format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Swift Neue";src:url("fonts/SwiftNeue-Bold.woff") format("woff");font-weight:700;font-display:swap}
+
+:root{
+  --cru:#fbf6ea;
+  --papel:#fffdf7;
+  --tinta:#262626;
+  --cor:#e2512f;
+  --gris:#6b665c;
+  --texto:720px;
+  --display:"LopezLab Hand","Marker Felt",cursive;
+  --serif:"Swift Neue",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cru);color:var(--tinta);font-family:var(--serif);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2{font-family:var(--display);font-weight:700;line-height:1.05;text-transform:uppercase;margin:0 0 .5em;letter-spacing:.01em}
+h2{font-size:clamp(34px,5vw,52px)}
+p{margin:0 0 1.1em}
+
+.portada{text-align:center;padding:72px 24px 0;max-width:1100px;margin:0 auto}
+.portada h1{font-size:clamp(36px,7vw,80px);margin-bottom:.35em}
+.sub{font-family:var(--display);font-size:clamp(19px,2.6vw,26px);letter-spacing:.04em;text-transform:uppercase;color:var(--cor);margin-bottom:44px}
+
+.seccion{padding:96px 24px}
+.seccion.cru{background:var(--papel)}
+.columna{max-width:var(--texto);margin:0 auto}
+.etiqueta{font-family:var(--display);font-weight:700;letter-spacing:.14em;color:var(--cor);font-size:17px;margin-bottom:.6em}
+.lede{font-size:24px;line-height:1.45}
+.datas{font-family:var(--display);font-size:22px;letter-spacing:.05em;color:var(--gris);margin-top:-.4em}
+
+.ilus{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto;padding:0 24px 24px}
+.ilus img{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:0 16px 32px -16px rgba(38,38,38,.4)}
+
+.ficha{margin:0}
+.ficha>div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:14px 0;border-top:1px solid #d9d0b8}
+.ficha>div:last-child{border-bottom:1px solid #d9d0b8}
+.ficha dt{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--cor);padding-top:.25em}
+.ficha dd{margin:0}
+
+.pe{background:var(--tinta);color:var(--cru);text-align:center;padding:56px 24px 48px}
+.pe-logos{display:flex;gap:48px;justify-content:center;align-items:center;flex-wrap:wrap;margin:0 auto 32px}
+
+@media (max-width:700px){
+  body{font-size:18px}
+  .seccion{padding:64px 24px}
+  .lede{font-size:21px}
+  .ilus{grid-template-columns:1fr}
+  .ficha>div{grid-template-columns:1fr;gap:4px}
+}
+@font-face{font-family:"LopezLab Hand O";src:url("fonts/LopezLabHand-Bold-O.woff2?v=2") format("woff2");font-weight:700;font-display:swap}
+.o-alt{font-family:"LopezLab Hand O","LopezLab Hand",cursive}
+
+.escena{--w:clamp(270px,42vw,500px);--h:calc(var(--w)*24/17);--d:calc(var(--w)*.0824);position:relative;width:100%;height:calc(var(--h) + 90px);margin:0 auto;perspective:1800px;display:flex;justify-content:center;padding-top:20px}
+.libro{position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateX(var(--rx,-4deg)) rotateY(var(--ry,8deg)) translateY(var(--ty,0px));will-change:transform}
+.cara{position:absolute;backface-visibility:hidden}
+.frente{inset:0;transform:translateZ(calc(var(--d)/2));background:url("img/portada.jpg") center/100% 100%;border-radius:1px 4px 4px 1px}
+.frente::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,rgba(0,0,0,.3) 0,rgba(255,255,255,.14) 1.4%,rgba(0,0,0,.06) 3.2%,transparent 6%),linear-gradient(115deg,rgba(255,255,255,.2) 0,rgba(255,255,255,0) 38%,rgba(0,0,0,.14) 100%)}
+.lombo{top:0;left:calc(var(--d)*-1);width:var(--d);height:100%;transform-origin:right center;transform:translateZ(calc(var(--d)/2)) rotateY(-90deg);background:url("img/lombo.jpg") center/100% 100%;border-radius:2px 0 0 2px}
+.lombo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.02) 40%,rgba(0,0,0,.14))}
+.canto{top:1.2%;left:var(--w);width:var(--d);height:97.6%;transform-origin:left center;transform:translateZ(calc(var(--d)/2)) rotateY(90deg);background:repeating-linear-gradient(90deg,#f3eee2 0 1px,#e2dccd 1px 2px),#ece6d6}
+.cima{top:calc(var(--d)*-1);left:.8%;width:98.4%;height:var(--d);transform-origin:center bottom;transform:translateZ(calc(var(--d)/2)) rotateX(90deg);background:repeating-linear-gradient(0deg,#f3eee2 0 1px,#e2dccd 1px 2px),#ece6d6;box-shadow:inset 0 0 12px rgba(0,0,0,.12)}
+.sombra{position:absolute;left:50%;bottom:42px;width:calc(var(--w)*1.15);height:46px;transform:translateX(-46%);background:radial-gradient(ellipse at center,rgba(38,38,38,.38) 0,rgba(38,38,38,.16) 45%,transparent 72%);filter:blur(8px);z-index:-1}

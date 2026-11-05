@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Non renunciamos a ti, renunciamos á túa ausencia · Hernán Naval</title>
+<meta name="description" content="Escolma de artigos de Hernán Naval Parapar, 1983-2000. Un libro da Agrupación Cultural Francisco Lanza e EOditorial.">
+<meta property="og:title" content="Non renunciamos a ti, renunciamos á túa ausencia">
+<meta property="og:description" content="Escolma de artigos de Hernán Naval Parapar, 1983-2000.">
+<meta property="og:image" content="https://ajaspino.github.io/hernannaval/img/portada.jpg">
+<link rel="icon" href="img/portada.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <section class="portada">
+    <h1>Non renunciamos a ti,<br>renunciamos á túa ausencia</h1>
+    <p class="sub">Escolma de artigos de Hernán Naval Parapar - 1983–2000</p>
+    <div class="escena" role="img" aria-label="Libro Non renunciamos a ti, renunciamos á túa ausencia: cuberta con retrato ao témpera de Hernán Naval sobre fondo laranxa">
+      <div class="libro">
+        <div class="cara frente"></div>
+        <div class="cara lombo"></div>
+        <div class="cara canto"></div>
+        <div class="cara cima"></div>
+      </div>
+      <div class="sombra"></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="columna">
+      <p class="etiqueta"><span class="o-alt">O</span> LIBRO</p>
+      <p class="lede">Un volve ler os textos de Hernán Naval e semella escoitalo de novo: golpeando as teclas da súa Olivetti, apurando un Ducados ou compartindo unha conversa entre as columnas da Casa do Mar.</p>
+      <p>A súa escrita combina o rigor intelectual coa retranca, a curiosidade coa provocación e unha fonda paixón polo seu tempo e polo seu país. Esta escolma reúne preto de corenta textos escritos entre 1983 e o ano 2000, unha mostra da súa obra e do seu compromiso coa lingua, a cultura e a sociedade galegas.</p>
+      <p>Vinte e cinco anos despois do seu pasamento, recuperar o pensamento de Hernán é reencontrarse cunha voz libre, lúcida e incómoda. Unha voz que, lonxe de quedar atrás, segue a interpelarnos.</p>
+    </div>
+  </section>
+
+  <section class="ilus">
+    <img src="img/peugeot.jpg" alt="Ilustración ao témpera dun Peugeot vermello con altofalantes no tellado" loading="lazy">
+    <img src="img/bandeiras.jpg" alt="Ilustración ao témpera de bandeiras" loading="lazy">
+  </section>
+
+  <section class="seccion cru">
+    <div class="columna">
+      <p class="etiqueta">QUEN FOI</p>
+      <h2>Hernán Naval Parapar</h2>
+      <p class="datas">Viveiro, 1962 — Ribadeo, 2001</p>
+      <p>Músico, mestre, pedagogo, escritor, compositor e tecedor de iniciativas sociais, políticas e culturais tanto no seu Viveiro natal coma no Ribadeo que lle deu acubillo.</p>
+      <p>Formado en linguaxe musical e trompeta, a súa batuta dirixiu a coral do CIT de San Cibrao (1987–1989) e máis a Banda Municipal de Ribadeo (1992–2001), á que levou á condición de banda sinfónica. En 1990 comezou a formar músicos. Foi tamén alma máter do nacemento e a consolidación da Escola Municipal de Música e Danza de Ribadeo (1993), que dirixiu ata o seu pasamento.</p>
+      <p>Militante do Bloque Nacionalista Galego e das agrupacións culturais Sementeira, en Viveiro, e Francisco Lanza, en Ribadeo, Hernán Naval foi un artivista: unha persoa que entendeu a arte coma unha ferramenta para remover conciencias e promover cambios políticos e sociais na Galiza dos anos 80 e 90.</p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="columna">
+      <p class="etiqueta">EDICIÓN</p>
+      <dl class="ficha">
+        <div><dt>Editan</dt><dd>Agrupación Cultural Francisco Lanza e EOditorial</dd></div>
+        <div><dt>Selección e edición</dt><dd>Dores Fernández, Suso López e Francisco Luís Rodríguez</dd></div>
+        <div><dt>Limiar</dt><dd>Suso López</dd></div>
+        <div><dt>Corrección lingüística</dt><dd>Dores Fernández, Farruco Graña e Antonio Gregorio</dd></div>
+        <div><dt>Deseño e maquetación</dt><dd>Irmáns López, Marigel e Chenchu</dd></div>
+        <div><dt>ISBN</dt><dd>979-13-992210-9-1</dd></div>
+        <div><dt>Depósito legal</dt><dd>LU 302-2026</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="pe">
+  <div class="pe-logos">
+    <img src="img/francisco-lanza.svg" alt="Agrupación Cultural Francisco Lanza" height="56">
+    <img src="img/eoditorial.svg" alt="EOditorial" height="40">
+    <img src="img/deputacion-lugo.svg" alt="Deputación de Lugo, Vicepresidencia" height="56">
+  </div>
+</footer>
+
+<script>
+(function(){
+  var libro=document.querySelector('.libro'),escena=document.querySelector('.escena');
+  if(!libro||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var actual=0,objetivo=0,corre=false;
+  function medir(){
+    var r=escena.getBoundingClientRect();
+    objetivo=Math.min(1,Math.max(0,-r.top/(r.height*0.9)));
+    if(!corre){corre=true;requestAnimationFrame(paso);}
+  }
+  function paso(){
+    actual+=(objetivo-actual)*0.12;
+    if(Math.abs(objetivo-actual)<0.001)actual=objetivo;
+    libro.style.setProperty('--ry',(8+actual*34).toFixed(2)+'deg');
+    libro.style.setProperty('--rx',(-4-actual*6).toFixed(2)+'deg');
+    libro.style.setProperty('--ty',(actual*40).toFixed(1)+'px');
+    if(actual!==objetivo)requestAnimationFrame(paso);else corre=false;
+  }
+  addEventListener('scroll',medir,{passive:true});
+  addEventListener('resize',medir);
+  medir();
+})();
+</script>
+</body>
+</html>
