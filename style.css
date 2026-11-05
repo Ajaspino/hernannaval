@@ -43,7 +43,7 @@ p{margin:0 0 1.1em}
 .ficha dd{margin:0}
 
 .pe{background:var(--tinta);color:var(--cru);text-align:center;padding:56px 24px 48px}
-.pe-logos{display:flex;gap:48px;justify-content:center;align-items:center;flex-wrap:wrap;margin:0 auto 32px}
+.pe-logos{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;width:100%;max-width:1000px;margin:0 auto}
 
 @media (max-width:700px){
   body{font-size:18px}
